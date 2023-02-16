@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  django-tutorial:
+    container_name: django-tutorial
+    image: felgts/django_tutorial
+    restart: always
+    environment:
+      - ALLOWED_HOSTS=*
+      - DB_HOST=bd_mariadb_django
+      - DB_USER=django
+      - DB_PASSWORD=django
+      - DB_NAME=django
+      - DJANGO_SUPERUSER_PASSWORD=admin
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@example.org
+    ports:
+      - 8082:5000
+    depends_on:
+      - db_django
+  db_django:
+    container_name: bd_mariadb_django
+    image: mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=django
+      - MYSQL_USER=django
+      - MYSQL_PASSWORD=django
+    volumes:
+      - mariadb_data_django:/var/lib/mysql
+volumes:
+    mariadb_data_django:
