@@ -64,7 +64,7 @@ pipeline {
                     steps{
                         sshagent(credentials : ['SSH_USER']) {
                         sh 'ssh -o StrictHostKeyChecking=no retr0@pyramidhead.ringedbeak.com wget https://raw.githubusercontent.com/Felg-Ts/Docker-python-django/main/docker-compose.yml -O docker-compose.yaml'
-                        sh 'ssh -o StrictHostKeyChecking=no retr0@pyramidhead.ringedbeak.com docker-compose up -d --force-recreate'
+                        sh 'ssh -o StrictHostKeyChecking=no retr0@pyramidhead.ringedbeak.com docker-compose up -d --force-recreate django-tutorial'
                     }
     }
 }
