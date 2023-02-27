@@ -14,7 +14,7 @@ pipeline {
             stages {
                 stage('Clone') {
                     steps {
-                        git branch:'master',url:'https://github.com/Felg-Ts/django_tutorial.git'
+                        git branch:'main',url:'https://github.com/Felg-Ts/ic_django_tutorial.git'
                     }
                 }
                 stage('Install') {
