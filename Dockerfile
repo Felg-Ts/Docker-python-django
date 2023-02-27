@@ -10,5 +10,5 @@ ENV DB_PASSWORD=django
 ENV DB_NAME=django
 ENV DJANGO_SUPERUSER_PASSWORD=admin
 ENV DJANGO_SUPERUSER_USERNAME=admin
-ENV DJANGO_SUPERUSER_EMAIL=admin@example.com
+ENVV DJANGO_SUPERUSER_EMAIL=admin@example.com
 CMD ["/usr/src/app/script.sh"]
